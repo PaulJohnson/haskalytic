@@ -1,9 +1,14 @@
 cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
 name:           haskalytic
 version:        0.1.0.0
-description:    Analysis of large Haskell projects.
-homepage:       https://github.com/githubuser/haskalytic#readme
-bug-reports:    https://github.com/githubuser/haskalytic/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/haskalytic#readme>
+homepage:       https://github.com/PaulJohnson/haskalytic#readme
+bug-reports:    https://github.com/PaulJohnson/haskalytic/issues
 author:         Paul Johnson
 maintainer:     paul@cogito.org.uk
 copyright:      Ⓒ 2022 Paul Johnson
@@ -16,17 +21,42 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/haskalytic
+  location: https://github.com/PaulJohnson/haskalytic
 
 library
   exposed-modules:
+      HieDb.Clustering
       HieDb.HieGraph
   other-modules:
       Paths_haskalytic
   hs-source-dirs:
       src
+  default-extensions:
+      TupleSections
   build-depends:
-      base >=4.7 && <5
+      algebraic-graphs
+    , base >=4.7 && <5
+    , containers
+    , hiedb
+    , lens
+  default-language: Haskell2010
+
+executable haskalytic
+  main-is: Main.hs
+  other-modules:
+      Paths_haskalytic
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      algebraic-graphs
+    , ansi-terminal
+    , base >=4.7 && <5
+    , containers
+    , directory
+    , haskalytic
+    , hiedb
+    , optparse-applicative
   default-language: Haskell2010
 
 executable haskalytic-exe
@@ -37,8 +67,14 @@ executable haskalytic-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      algebraic-graphs
+    , ansi-terminal
+    , base >=4.7 && <5
+    , containers
+    , directory
     , haskalytic
+    , hiedb
+    , optparse-applicative
   default-language: Haskell2010
 
 test-suite haskalytic-test

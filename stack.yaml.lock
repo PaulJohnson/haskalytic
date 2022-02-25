@@ -3,7 +3,21 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: hiedb-0.4.1.0@sha256:fb20c657d9ecc91701b00dffcf4bbd77cb83720a1f9d867badd77ea227973135,2875
+    pantry-tree:
+      size: 1065
+      sha256: a435da423581f61a9f625f291960fff48d23f871db79f61a6ffaee191bbd935d
+  original:
+    hackage: hiedb-0.4.1.0
+- completed:
+    hackage: hie-compat-0.2.1.1@sha256:b77011887ffc9ffd57b130a20ed53d6f57208228d121595211569ec523c85387,1634
+    pantry-tree:
+      size: 1410
+      sha256: 6605910967f7b761b33028540f80d3d1e8aecbd65f6ae57e35327c10f75a5945
+  original:
+    hackage: hie-compat-0.2.1.1
 snapshots:
 - completed:
     size: 590102

@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "haskalytic:lib"
+
+    - path: "./app/Main.hs"
+      component: "haskalytic:exe:haskalytic-exe"
+
+    - path: "./app/Paths_haskalytic.hs"
+      component: "haskalytic:exe:haskalytic-exe"
+
+    - path: "./test"
+      component: "haskalytic:test:haskalytic-test"
